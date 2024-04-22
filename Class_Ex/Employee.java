@@ -177,6 +177,9 @@ public class Employee {
                             break;
                         }
                     }
+                    if (!isExist) {
+                        System.out.println("Nhan vien khong ton tai.");
+                    }
                     break;
                 case 3:
                     System.out.println("In danh sach");

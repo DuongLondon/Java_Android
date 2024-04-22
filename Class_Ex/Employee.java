@@ -154,13 +154,14 @@ public class Employee {
                             isHave = true;
                             System.out.println("Nhan vien da ton tai.");
                             break;
-                        } else {
-                            System.out.println("Nhap thong tin nhan vien moi:");
-                            empl.Nhap();
-                            ListEmp.add(empl);
-                            System.out.println("Them nhan vien thanh cong.");
-                            break;
                         }
+                    }
+                    if (!isHave) {
+                        System.out.println("Nhap thong tin nhan vien moi:");
+                        empl.Nhap();
+                        ListEmp.add(empl);
+                        System.out.println("Them nhan vien thanh cong.");
+                        break;
                     }
                     break;
                 case 2:

@@ -7,16 +7,17 @@ public class Employee {
     private int id;
     private String name;
     private int age;
-    private String department;
     private String code;
-    private float salary_rate;
+    private String department;
+    private double salary_rate;
 
-    public Employee() {
-        id = 0;
-        name = "Unknown";
-        age = 0;
-        department = "Unknown";
-        salary_rate = 0;
+    public Employee(int id, String name, int age, String code, String department, double salary_rate) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.code = code;
+        this.department = department;
+        this.salary_rate = salary_rate;
     }
 
     public void Nhap() {
@@ -88,7 +89,7 @@ public class Employee {
         this.code = code;
     }
 
-    public float getSalary_rate() {
+    public double getSalary_rate() {
         return salary_rate;
     }
 
@@ -98,17 +99,38 @@ public class Employee {
 
     public static void main(String[] args) {
         ArrayList<Employee> ListEmp = new ArrayList<>();
-        int SLNV;
+        // int SLNV;
+        // System.out.println("Nhap so luong nhan vien: ");
+        // SLNV = scan.nextInt();
+        // scan.nextLine();
+        // for (int i = 0; i < SLNV; i++) {
+        // System.out.println("Nhan vien thu: " + (i + 1) + ":");
+        // Employee empl = new Employee();
+        // empl.Nhap();
+        // ListEmp.add(empl);
+        // }
+        Employee em1 = new Employee(1, "Duong", 20, "cntt", "d01", 5.0);
+        ListEmp.add(em1);
+        Employee em2 = new Employee(2, "Huyen", 18, "kt", "h02", 6.0);
+        ListEmp.add(em2);
+        Employee em3 = new Employee(3, "Tam", 20, "cntt", "t03", 3.0);
+        ListEmp.add(em3);
+        Employee em4 = new Employee(4, "Hung", 21, "vp", "h04", 9.0);
+        ListEmp.add(em4);
+        Employee em5 = new Employee(5, "Huong", 22, "ns", "h05", 2.0);
+        ListEmp.add(em5);
+        Employee em6 = new Employee(6, "Vinh", 19, "kt", "v06", 4.0);
+        ListEmp.add(em6);
+        Employee em7 = new Employee(7, "Tuan", 25, "tdh", "t07", 7.0);
+        ListEmp.add(em7);
+        Employee em8 = new Employee(8, "Phong", 30, "ls", "p08", 3.0);
+        ListEmp.add(em8);
+        Employee em9 = new Employee(9, "Bao", 26, "tc", "b09", 9.0);
+        ListEmp.add(em9);
+        Employee em10 = new Employee(10, "Ngoc", 27, "tnn", "n10", 10.0);
+        ListEmp.add(em10);
+
         Scanner scan = new Scanner(System.in);
-        System.out.println("Nhap so luong nhan vien: ");
-        SLNV = scan.nextInt();
-        scan.nextLine();
-        for (int i = 0; i < SLNV; i++) {
-            System.out.println("Nhan vien thu: " + (i + 1) + ":");
-            Employee empl = new Employee();
-            empl.Nhap();
-            ListEmp.add(empl);
-        }
 
         int choice = 0;
         do {
@@ -122,11 +144,24 @@ public class Employee {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Nhap thong tin nhan vien:");
-                    Employee empl = new Employee();
-                    empl.Nhap();
-                    ListEmp.add(empl);
-                    System.out.println("Them nhan vien thanh cong.");
+                    System.out.println("Them nhan vien.");
+                    Employee empl = new Employee(0, "Uknown", 0, "Unknown", "Unknown", 0);
+                    System.out.println("Nhap ID: ");
+                    int new_id = scan.nextInt();
+                    boolean isHave = false;
+                    for (Employee emp : ListEmp) {
+                        if (emp.getID() == new_id) {
+                            isHave = true;
+                            System.out.println("Nhan vien da ton tai.");
+                            break;
+                        } else {
+                            System.out.println("Nhap thong tin nhan vien moi:");
+                            empl.Nhap();
+                            ListEmp.add(empl);
+                            System.out.println("Them nhan vien thanh cong.");
+                            break;
+                        }
+                    }
                     break;
                 case 2:
                     System.out.println("Xoa nhan vien.");

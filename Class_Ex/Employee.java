@@ -193,7 +193,6 @@ public class Employee {
         for (Employee empl : ListEmp) {
             empl.Xuat();
         }
-        scan.nextLine();
         scan.close();
         System.exit(0);
     }
